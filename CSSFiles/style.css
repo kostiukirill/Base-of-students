@@ -1,0 +1,219 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat Regular'), local('Montserrat-Regular'),
+      url('../Other/fonts/Montserrat-Regular.woff2') format('woff2'),
+      url('../Other/fonts/Montserrat-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat Bold'), local('Montserrat-Bold'),
+      url('../Other/fonts/Montserrat-Bold.woff2') format('woff2'),
+      url('../Other/fonts/Montserrat-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'),
+      url('../Other/fonts/Montserrat-ExtraBold.woff2') format('woff2'),
+      url('../Other/fonts/Montserrat-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
+      url('../Other/fonts/Montserrat-SemiBold.woff2') format('woff2'),
+      url('../Other/fonts/Montserrat-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+  }
+
+
+body {
+    background: #292929;
+}
+
+.container {
+    max-width: 1920px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button_form {
+    border: none;
+    background: #c57600;
+    border-radius: 25px;
+    color: #d7d5d5;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 24px;
+    height: 40px;
+    width: 20rem;
+    cursor: pointer;
+}
+
+.table_base {
+    background: #e3e3e358;
+    border-collapse: collapse;
+    border: 1px solid #292929;
+    border-radius: 40px;
+    color: #292929;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.table_data {
+    border: 3px solid #292929;
+    width: 30em;
+    text-align: center;
+}
+
+.form_div, .filter_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1600px;
+    background: #87878758;
+    border-radius: 25px;
+    margin-bottom: 50px;
+}
+
+.form_active {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px;
+    visibility: visible;
+    transition: all .1s ease-in-out;
+}
+
+.form_disactive {
+  visibility: hidden;
+  height: 0;
+}
+
+.form_input, .filter_input {
+    border: none;
+    background: #e3e3e3;
+    color: #292929;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 20px;
+    border-radius: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.form_input {
+  height: 40px;
+  width: 25rem;
+}
+
+.filter_div .label-default {
+  margin-right: 30px;
+}
+
+.filter_div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 50px;
+  position: relative;
+}
+
+.filter_input {
+  width: 20em;
+}
+
+.filter_btn {
+  background: transparent;
+  border: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.filter_btn line {
+  transition: stroke .3s ease-in-out;
+}
+
+.filter_btn circle {
+  transition: stroke .3s ease-in-out;
+}
+
+.filter_btn:hover line {
+  stroke: #c57600;
+}
+.filter_btn:hover circle {
+  stroke: #c57600;
+}
+
+
+.table_firstRow {
+  cursor: pointer;
+}
+
+.label_descr {
+  margin: 0;
+  position: absolute;
+  background: #4a4a4a;
+  top: -10px;
+  left: 20px;
+  padding: 0 3px;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 14px;
+  color: #292929;
+}
+
+
+.label-default {
+  position: relative;
+  border: 1px solid #292929;
+  margin-bottom: 30px;
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.label-invalid {
+  color: red;
+  border-color: red;
+}
+
+.label-default:not(:nth-child(3n)) {
+    margin-right: 30px;
+}
+
+.delBtn {
+    border: none;
+    background: crimson;
+    border-radius: 25px;
+    color: #d7d5d5;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 18px;
+    height: 22px;
+    width: 7rem;
+    cursor: pointer;
+}

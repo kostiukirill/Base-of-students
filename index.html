@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>База студентов</title>
+    <link rel="stylesheet" href="CSSFiles/normalize.css">
+    <link rel="stylesheet" href="CSSFiles/style.css">
+    <script src="JSFiles/main.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            createStudentBase();
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="form_div">
+            <form class="form_disactive" id="form" action="">
+                <label class="label-default" for="#inputSN">
+                    <p class="label_descr">
+                        Фамилия
+                    </p>
+                    <input class="form_input" id="inputSN" type="text" required>
+                </label>
+                <label class="label-default" for="#inputFN">
+                    <p class="label_descr">
+                        Имя
+                    </p>
+                    <input class="form_input" id="inputFN" type="text" required>
+                </label>
+                <label class="label-default" for="#inputPT">
+                    <p class="label_descr">
+                        Отчество
+                    </p>
+                    <input class="form_input" id="inputPT" type="text" required>
+                </label>
+                <label class="label-default" for="#inputBD">
+                    <p class="label_descr">
+                        Дата рождения
+                    </p>
+                    <input class="form_input" id="inputBD" type="date" required>
+                </label>
+                <label class="label-default" for="#inputSD">
+                    <p class="label_descr">
+                        Дата начала обучения
+                    </p>
+                    <input class="form_input" id="inputSD" type="number" required>
+                </label>
+                <label class="label-default" for="#inputFac">
+                    <p class="label_descr">
+                        Факультет
+                    </p>
+                    <input class="form_input" id="inputFac" type="text" required>
+                </label>
+                <button class="button_form" id="form_btn">Добавить</button>
+            </form>
+            <button class="button_form" id="openFormBtn">Добавить студента</button>
+        </div>
+        <div class="filter_div">
+            <button class="filter_btn">
+                <svg width="50px" height="50px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <title>Filter</title>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Filter">
+                            <rect id="Rectangle" fill-rule="nonzero" x="0" y="0" width="24" height="24">
+                            </rect>
+                            <line x1="4" y1="5" x2="16" y2="5" id="Path" stroke="#292929" stroke-width="2" stroke-linecap="round">
+                            </line>
+                            <line x1="4" y1="12" x2="10" y2="12" id="Path" stroke="#292929" stroke-width="2" stroke-linecap="round">
+                            </line>
+                            <line x1="14" y1="12" x2="20" y2="12" id="Path" stroke="#292929" stroke-width="2" stroke-linecap="round">
+                            </line>
+                            <line x1="8" y1="19" x2="20" y2="19" id="Path" stroke="#292929" stroke-width="2" stroke-linecap="round">
+                            </line>
+                            <circle id="Oval" stroke="#292929" stroke-width="2" stroke-linecap="round" cx="18" cy="5" r="2">
+                            </circle>
+                            <circle id="Oval" stroke="#292929" stroke-width="2" stroke-linecap="round" cx="12" cy="12" r="2">
+                            </circle>
+                            <circle id="Oval" stroke="#292929" stroke-width="2" stroke-linecap="round" cx="6" cy="19" r="2">
+                            </circle>
+                        </g>
+                    </g>
+                </svg>
+            </button>
+            <div class="filter-block form_disactive">
+                <label for="" class="label-default">
+                    <p class="label_descr">
+                        Фамилия
+                    </p>
+                    <input type="text" class="filter_input" id="snFilter">
+                </label>
+                <label for="" class="label-default">
+                    <p class="label_descr">
+                        Имя
+                    </p>
+                    <input type="text" class="filter_input" id="fnFilter">
+                </label>
+                <label for="" class="label-default">
+                    <p class="label_descr">
+                        Отчество
+                    </p>
+                    <input type="text" class="filter_input" id="ptFilter">
+                </label>
+                <label for="" class="label-default">
+                    <p class="label_descr">
+                        Дата рождения
+                    </p>
+                    <input type="date" class="filter_input" id="bdFilter">
+                </label>
+                <label for="" class="label-default">
+                    <p class="label_descr">
+                        Год начала обучения
+                    </p>
+                    <input type="number" class="filter_input" id="sdFilter">
+                </label>
+                <label for="" class="label-default">
+                    <p class="label_descr">
+                        Факультет
+                    </p>
+                    <input type="text" class="filter_input" id="facFilter">
+                </label>
+            </div>
+        </div>
+        <div class="table_div">
+            <table class="table_base">
+                <thead>
+                    <tr class="table_row table_firstRow">
+                        <th class="table_data table_firstData" id="SN" data-type="string">Фамилия</th>
+                        <th class="table_data table_firstData" id="FN" data-type="string">Имя</th>
+                        <th class="table_data table_firstData" id="PT" data-type="string">Отчество</th>
+                        <th class="table_data table_firstData" id="BD" data-type="number">Дата рождения (возраст)</th>
+                        <th class="table_data table_firstData" id="SD" data-type="number">Год начала обучения (курс)</th>
+                        <th class="table_data table_firstData" id="Fac" data-type="string">Факультет</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
